@@ -7133,8 +7133,12 @@ var instances_1 = __webpack_require__(423);
 var Default = {
     minValue: null,
     maxValue: null,
-    onIncrement: function () { },
-    onDecrement: function () { },
+    onIncrement: function (instance) {
+        instance._targetEl.dispatchEvent(new Event('input', { bubbles: true }));
+    },
+    onDecrement: function (instance) {
+        instance._targetEl.dispatchEvent(new Event('input', { bubbles: true }));
+    },
 };
 var DefaultInstanceOptions = {
     id: null,
